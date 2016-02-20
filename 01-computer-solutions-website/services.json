@@ -1,0 +1,16 @@
+[{
+	"id": 1,
+	"name": "Hardware Repair",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate, lorem ut sagittis pellentesque, elit magna fringilla mauris, et auctor felis lectus sit amet tortor. Pellentesque laoreet ligula a mi eleifend porttitor. Donec imperdiet massa vel mi mattis aliquet. Aenean venenatis augue in augue mattis, vel tempus felis ultrices.",
+	"image": "computer-icon.png"
+}, {
+	"id": 2,
+	"name": "Virus Removal",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate, lorem ut sagittis pellentesque, elit magna fringilla mauris, et auctor felis lectus sit amet tortor. Pellentesque laoreet ligula a mi eleifend porttitor. Donec imperdiet massa vel mi mattis aliquet. Aenean venenatis augue in augue mattis, vel tempus felis ultrices.",
+	"image": "computer-icon.png"
+}, {
+	"id": 3,
+	"name": "System Tuneup",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate, lorem ut sagittis pellentesque, elit magna fringilla mauris, et auctor felis lectus sit amet tortor. Pellentesque laoreet ligula a mi eleifend porttitor. Donec imperdiet massa vel mi mattis aliquet. Aenean venenatis augue in augue mattis, vel tempus felis ultrices.",
+	"image": "computer-icon.png"
+}]
