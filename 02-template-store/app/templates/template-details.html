@@ -3,12 +3,32 @@
   <br>
   <br>
   <div class="col-md-4">
-  	<img class="img-full" src="img/blue.jpg">
+  	<img class="img-full" ng-src="img/{{mainImage}}">
+  	<div class="row">
+  		<div ng-repeat="image in template.images | limitTo:4">
+  			<div class="col-md-3">
+  				<img class="img-full" ng-src="img/{{image.name}}" ng-click="setImage(image)">
+  			</div>
+  		</div>
+  	</div>
   </div>
   <div class="col-md-8">
-  	<h3>Blue Template</h3>
-  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra sed lectus eu rhoncus. Vestibulum porta sem sed tempus pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed luctus felis vitae diam rutrum, et sollicitudin est vestibulum. Fusce ut tellus id sapien egestas feugiat non sit amet nibh. Curabitur id porta orci, quis ornare ante. Maecenas commodo ligula ut justo feugiat, ut ornare ex dictum. Mauris id orci mauris. Sed lacinia nisl ac nulla finibus, sit amet commodo nisi tristique. Aliquam erat volutpat. Ut est metus, congue nec tristique quis, feugiat a orci. Suspendisse luctus libero ornare nisi sagittis condimentum.</p>
-  	<h4>$19.99</h4>
-  	BUY IT
+  	<h3>{{template.name}}</h3>
+  	<p>{{template.description}}</p>
+  	<p>Type: {{template.type}}</p>
+  	<h4>{{template.price | currency}}</h4>
+  	<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+  	  <input type="hidden" name="cmd" value="_xclick">
+  	  <input type="hidden" name="business" value="john@doe.com">
+  	  <input type="hidden" name="item_name" value="{{template.name}}">
+  	  <input type="hidden" name="item_number" value="{{template.id}}">
+  	  <input type="hidden" name="currency_code" value="USD">
+  	  <input type="hidden" name="amount" value="{{template.price}}">
+  	  <input type="hidden" name="no_shipping" value="1">
+  	  <input type="hidden" name="rm" value="2">
+  	  <input type="hidden" name="return" value="http://localhost:8000">
+  	  <input type="hidden" name="cancel_return" value="http://localhost:8000">
+  	  <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_107x26.png" border="0" name="submit" alt="Buy Now">
+  	</form>
   </div>
 </div>
