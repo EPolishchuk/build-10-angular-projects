@@ -1,0 +1,29 @@
+[
+  {
+    "id" : 1,
+    "name" : "Lynn Location", 
+    "street_address" : "555 Western ave",
+    "city" : "Lynn",
+    "state" : "MA",
+    "zip" : "01902",
+    "phone" : "781-555-5555"
+  },
+  {
+    "id" : 2,
+    "name" : "Amesbury Location", 
+    "street_address" : "54 Macy st",
+    "city" : "Amesbury",
+    "state" : "MA",
+    "zip" : "01913",
+    "phone" : "978-555-5555"
+  },
+  {
+    "id" : 3,
+    "name" : "Boston Location", 
+    "street_address" : "777 Mass Ave",
+    "city" : "Boston",
+    "state" : "MA",
+    "zip" : "01912",
+    "phone" : "617-555-5555"
+  }
+]
