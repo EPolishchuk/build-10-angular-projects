@@ -28,3 +28,25 @@
   content: "";
   padding: 0;
 }
+
+.panel {
+  background: #f9f9f9;
+  border: #ccc 1px solid;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  line-height: 1.8em;
+}
+
+h5 {
+  margin: 10px 0;
+  padding: 5px 0;
+  background: #f4f4f4;
+  padding: 10px;
+}

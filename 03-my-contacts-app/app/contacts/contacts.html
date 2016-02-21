@@ -1,6 +1,25 @@
 <div class="row" ng-controller="ContactsCtrl">
     <div class="large-10 columns">
-        <div data-alert class="alert-box" ng-show="msg">{{msg}}</div>
+    <div data-alert class="alert-box" ng-show="msg">{{msg}}</div>
+
+    <!--Show Contact-->
+    <div class="row" ng-show="contactShow">
+        <div class="panel">
+            <h3>{{name}}</h3>
+            <ul>
+                <li><strong>Compnay</strong>: {{company}}</li>
+                <li><strong>Email Address</strong>: {{email}}</li>
+                <h5>Phone Numbers</h5>
+                <li><strong>Work</strong>: {{work_phone}}</li>
+                <li><strong>Home</strong>: {{home_phone}}</li>
+                <li><strong>Mobile</strong>: {{mobile_phone}}</li>
+                <h5>Location Info</h5>
+                <li>{{street_address}}</li>
+                <li>{{city}}, {{state}} {{zipcode}}</li>
+            </ul>
+        </div>     
+    </div>
+
     <form ng-submit="addFormSubmit()" ng-show="addFormShow">
             <h3>Add Contact</h3>
             <!-- Add Form -->
@@ -82,7 +101,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="contact in contacts">                    
-                    <td><a href="">{{contact.name}}</a></td>
+                    <td><a ng-click="showContact(contact)">{{contact.name}}</a></td>
                     <td>{{contact.company}}</td>
                     <td>{{contact.email}}</td>
                     <td>
