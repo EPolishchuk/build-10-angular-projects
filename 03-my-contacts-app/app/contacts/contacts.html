@@ -1,1 +1,98 @@
-<p>This is the partial for view 1.</p>
+<div class="row" ng-controller="ContactsCtrl">
+    <form ng-show="addFormShow">
+            <h3>Add Contact</h3>
+            <!-- Add Form -->
+            <div class="row">
+                <div class="large-6 columns">
+                  <label>Name:
+                    <input type="text" ng-model="name" placeholder="Contact Name" required />
+                  </label>
+                </div>
+                <div class="large-6 columns">
+                  <label>Email:
+                    <input type="text" ng-model="email" placeholder="Contact Email" required />
+                  </label>
+                </div>
+             </div>
+             <div class="row">
+                 <div class="large-6 columns">
+                   <label>Company:
+                     <input type="text" ng-model="company" placeholder="Company Name" required />
+                   </label>
+                 </div>
+                 <div class="large-6 columns">
+                   <label>Work Phone:
+                     <input type="text" ng-model="work_phone" placeholder="Work Phone" required />
+                   </label>
+                 </div>
+              </div>
+              <div class="row">
+                  <div class="large-6 columns">
+                    <label>Mobile Phone:
+                      <input type="text" ng-model="mobile_phone" placeholder="Mobile Phone" required />
+                    </label>
+                  </div>
+                  <div class="large-6 columns">
+                    <label>Home Phone:
+                      <input type="text" ng-model="home_phone" placeholder="Home Phone" required />
+                    </label>
+                  </div>
+               </div>
+               <div class="row">
+                   <div class="large-6 columns">
+                     <label>Street Address:
+                       <input type="text" ng-model="street_address" placeholder="Street Address" required />
+                     </label>
+                   </div>
+                   <div class="large-6 columns">
+                     <label>City:
+                       <input type="text" ng-model="city" placeholder="City" required />
+                     </label>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                      <label>State:
+                        <input type="text" ng-model="state" placeholder="State" required />
+                      </label>
+                    </div>
+                    <div class="large-6 columns">
+                      <label>Zip Code:
+                        <input type="text" ng-model="zipcode" placeholder="Zip Code" required />
+                      </label>
+                    </div>
+                 </div>
+             <div class="row">
+                <div class="large-12 columns">
+                    <input type="submit" value="Add Contact" class="button" />
+                </div>
+             </div>
+    </form>
+    <div class="large-10 columns">
+        <h3>Your Contacts (3)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th width="200px">Name</th>
+                    <th width="200px">Company</th>
+                    <th width="25%">Email</th>
+                    <th width="25%">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in contacts">                    
+                    <td><a href="">{{contact.name}}</a></td>
+                    <td>{{contact.company}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>
+                        <a class="button tiny" ng-click="showEditForm(contact)">Edit</a>
+                        <a class="button tiny alert" ng-click="removeContact(contact)">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="large-2 columns">
+        <a class="button large" ng-click="showAddForm()">+</a>
+    </div>
+</div>
