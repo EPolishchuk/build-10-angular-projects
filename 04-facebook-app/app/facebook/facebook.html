@@ -33,22 +33,27 @@
     </div>
     <div class="col-md-8">
       <h3>Welcome to Facebook!</h3>
-      <form>
-        <div class="form-group">
-          <label>Status Update</label>
-          <textarea class="form-control"></textarea>
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>  
-      <br><br>    
-      <div ng-repeat="post in posts" class="stbody">
-      	<div class="stimg">
-      		<img ng-src="{{picture}}">
-      	</div>
-      	<div class="sttext">
-      		<img ng-if="post.icon" src="{{post.icon}}"> {{post.message || post.story}}
-      		<div class="sttime">{{post.updated_time}}</div> 
-      	</div>
-      </div>
+      <div ng-if="isLoggedIn == true">
+	      <form ng-submit="postStatus()">
+	        <div class="form-group">
+	          <label>Status Update</label>
+	          <textarea ng-model="body" class="form-control"></textarea>
+	        </div>
+	        <button type="submit" class="btn btn-default">Submit</button>
+	      </form>  
+	      <br><br>    
+	      <div ng-repeat="post in posts" class="stbody">
+	      	<div class="stimg">
+	      		<img ng-src="{{picture}}">
+	      	</div>
+	      	<div class="sttext">
+	      		<img ng-if="post.icon" src="{{post.icon}}"> {{post.message || post.story}}
+	      		<div class="sttime">{{post.updated_time}}</div> 
+	      	</div>
+	      </div>
+	   </div>
+	   <div ng-if="isLoggedIn == true">
+	   	<p>You need to log in to post</p>
+	   </div>
     </div>
   </div>
