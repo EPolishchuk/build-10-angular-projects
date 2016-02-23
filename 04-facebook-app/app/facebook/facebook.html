@@ -1,6 +1,10 @@
 <div class="row" ng-controller="FacebookCtrl">
     <div class="col-md-4">
       <h4>{{welcomeMsg}}</h4>
+      <div ng-if="isLoggedIn == true">
+      	<a href="{{userInfo.link}}" target="_blank"><img ng-src="{{picture}}"></a>   
+      	<br>   	
+      </div>
       <div ng-if="isLoggedIn == false">
       	<button type="button" class="btn btn-default" ng-click="login()">Login</button>      	
       </div>
@@ -20,10 +24,10 @@
         </ul>
       </div>
       <br>
-      <div class="well">
+      <div ng-if="isLoggedIn == true" class="well">
         <h4>Permissions</h4>
         <ul>
-          <li></li>
+          <li ng-repeat="permission in permissions">{{permission.permission}} - {{permission.status}}</li>
         </ul>
       </div>
     </div>
@@ -35,6 +39,16 @@
           <textarea class="form-control"></textarea>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>      
+      </form>  
+      <br><br>    
+      <div ng-repeat="post in posts" class="stbody">
+      	<div class="stimg">
+      		<img ng-src="{{picture}}">
+      	</div>
+      	<div class="sttext">
+      		<img ng-if="post.icon" src="{{post.icon}}"> {{post.message || post.story}}
+      		<div class="sttime">{{post.updated_time}}</div> 
+      	</div>
+      </div>
     </div>
   </div>

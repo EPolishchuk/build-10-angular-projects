@@ -11,7 +11,7 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
 
 .config( function( $facebookProvider ) {
   $facebookProvider.setAppId('1669877126605665');
-  $facebookProvider.setPermissions('email', 'public_profile', 'user_posts', 'publish_actions', 'user_photos');
+  $facebookProvider.setPermissions('email, public_profile, user_posts, publish_actions, user_photos');
 })
 
 .run(function($rootScope){
@@ -42,11 +42,20 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
 	};
 
 	function refresh(){
-		$facebook.api("/me?fields=id,name,first_name,last_name,email,gender,locale").then(function(response){
+		$facebook.api("/me?fields=id,name,link,first_name,last_name,email,gender,locale").then(function(response){
 			$scope.welcomeMsg = "Welcome " + response.name;
 			$scope.isLoggedIn = true;
 			$scope.userInfo = response;
-			console.log(response);
+			$facebook.api('me/picture').then(function(response){
+				$scope.picture = response.data.url;
+				$facebook.api('/me/permissions').then(function(response){
+					$scope.permissions = response.data;
+					$facebook.api('me/posts?fields=icon,message,status_type,story,updated_time').then(function(response){
+						$scope.posts = response.data;
+						console.log($scope.posts);
+					})
+				})
+			});
 		},
 		function(err){
 			$scope.welcomeMsg = "Please Log In";

@@ -32,3 +32,34 @@ body {
   content: "";
   padding: 0;
 }
+
+.stbody {
+  min-height: 70px;
+  margin-bottom: 10px;
+  border-bottom: dashed 1px #cc0000;
+}
+
+.stimg {
+  float: left;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #dedede;
+  padding: 5px;
+}
+
+.sttext {
+  margin-left: 70px;
+  min-height: 50px;
+  word-wrap: break-word;
+  overflow: hidden;
+  padding: 5px;
+  display: block;
+  font-family: 'Georgia', Times New Roman, Times, serif;
+}
+
+.sttime {
+  font-size: 11px;
+  color: #999;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5px;
+}
