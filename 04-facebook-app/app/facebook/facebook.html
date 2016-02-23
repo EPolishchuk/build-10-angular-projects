@@ -1,17 +1,22 @@
 <div class="row" ng-controller="FacebookCtrl">
     <div class="col-md-4">
-      <h4>Please Log In</h4>
-      <button type="button" class="btn btn-default" ng-click="login()">Log In</button>
+      <h4>{{welcomeMsg}}</h4>
+      <div ng-if="isLoggedIn == false">
+      	<button type="button" class="btn btn-default" ng-click="login()">Loginn</button>      	
+      </div>
+      <div ng-if="isLoggedIn == true">
+      	<button type="button" class="btn btn-default" ng-click="logout()">Logout</button>      	
+      </div>
       <br><br>
-      <div class="well">
+      <div ng-if="isLoggedIn == true" class="well">
         <h4>User Info</h4>
         <ul>
-          <li>ID: someID</li>
-          <li>First Name: John</li>
-          <li>Last Name: Doe</li>
-          <li>Email: John@Doe.com</li>
-          <li>Gender: Male</li>
-          <li>Locale: enGB</li>
+          <li>ID: {{userInfo.id}}</li>
+          <li>First Name: {{userInfo.first_name}}</li>
+          <li>Last Name: {{userInfo.last_name}}</li>
+          <li>Email: {{userInfo.email}}</li>
+          <li>Gender: {{userInfo.gender}}</li>
+          <li>Locale: {{userInfo.locale}}</li>
         </ul>
       </div>
       <br>
