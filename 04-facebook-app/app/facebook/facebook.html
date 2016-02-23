@@ -1,1 +1,35 @@
-<p>This is the partial for view 1.</p>
+<div class="row" ng-controller="FacebookCtrl">
+    <div class="col-md-4">
+      <h4>Please Log In</h4>
+      <button type="button" class="btn btn-default" ng-click="login()">Log In</button>
+      <br><br>
+      <div class="well">
+        <h4>User Info</h4>
+        <ul>
+          <li>ID: someID</li>
+          <li>First Name: John</li>
+          <li>Last Name: Doe</li>
+          <li>Email: John@Doe.com</li>
+          <li>Gender: Male</li>
+          <li>Locale: enGB</li>
+        </ul>
+      </div>
+      <br>
+      <div class="well">
+        <h4>Permissions</h4>
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <h3>Welcome to Facebook!</h3>
+      <form>
+        <div class="form-group">
+          <label>Status Update</label>
+          <textarea class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>      
+    </div>
+  </div>
