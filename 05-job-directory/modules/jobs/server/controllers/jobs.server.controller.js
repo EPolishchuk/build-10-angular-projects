@@ -40,7 +40,12 @@ exports.update = function (req, res) {
   var job = req.job;
 
   job.title = req.body.title;
-  job.content = req.body.content;
+  job.company = req.body.company;
+  job.description = req.body.description;
+  job.hourly_wage = req.body.hourly_wage;
+  job.requirements = req.body.requirements;
+  job.state = req.body.state;
+  job.contact_email = req.body.contact_email;
 
   job.save(function (err) {
     if (err) {

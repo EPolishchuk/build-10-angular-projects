@@ -10,13 +10,18 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <small>
-    <em class="text-muted">
-      Posted on
-      <span ng-bind="job.created | date:'mediumDate'"></span>
-      by
-      <span ng-bind="job.user.displayName"></span>
-    </em>
-  </small>
-  <p class="lead" ng-bind="job.content"></p>
+  <div class="job-info">
+    <p ng-bind="job.description"></p>
+    <ul>      
+      <li><strong>Listing Date: </strong><span ng-bind="job.created | date:'mediumDate'"></span></li>
+      <li><strong>Job Poster: </strong><span ng-bind="job.user.displayName"></span></li>
+      <li><strong>Company Name: </strong><span ng-bind="job.company"></span></li>
+      <li><strong>Hourly Wage: </strong><span ng-bind="job.hourly_wage"></span></li>
+      <li><strong>Requirements: </strong><span ng-bind="job.requirements"></span></li>
+      <li><strong>Contact Email: </strong><a href="mailto:{{job.contact_email}}"><span ng-bind="job.contact_email"></span></a></li>
+    </ul>
+  </div>
+  <br>
+  <br>
+  <a href="/jobs">Go Back</a>
 </section>
