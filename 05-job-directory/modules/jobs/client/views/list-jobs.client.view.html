@@ -1,0 +1,20 @@
+<section ng-controller="JobsController" ng-init="find()">
+  <div class="page-header">
+    <h1>Jobs</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="job in jobs" ui-sref="jobs.view({jobId: job._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="job.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="job.user.displayName"></span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="job.title"></h4>
+      <p class="list-group-item-text" ng-bind="job.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="jobs.$resolved && !jobs.length">
+    No jobs yet, why don't you <a ui-sref="jobs.create">create one</a>?
+  </div>
+</section>
