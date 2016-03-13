@@ -46,7 +46,7 @@ var JobSchema = new Schema({
     default: '' 
   },
   contact_email: {
-    type: Number,
+    type: String,
     default: '',
     trim: true    
   },
