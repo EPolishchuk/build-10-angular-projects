@@ -5,3 +5,15 @@ footer {
 	padding-top: 10px;
 	text-align: center;
 }
+
+.heading {
+	background: #666;
+	color: #fff;
+	padding: 5px;
+}
+
+.article {
+	border-bottom: #ccc solid 1px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
