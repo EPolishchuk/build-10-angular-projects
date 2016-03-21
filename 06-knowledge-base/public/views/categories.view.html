@@ -21,8 +21,8 @@
 				<div class="col-md-12">
 					<div class="article">						
 						<h4>{{article.title}}</h4>
-						<p>{{article.body}}</p>
-						<a class="btn btn-default" ng-href="#/articles/details/{{article._id}}">Read Article</a>
+						<p>{{article.body | limitTo: 10}}</p>
+						<a class="btn btn-default" ng-href="#/articles/detail/{{article._id}}">Read Article</a>
 					</div>
 				</div>
 			</div>
