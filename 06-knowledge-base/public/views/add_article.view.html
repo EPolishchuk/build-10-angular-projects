@@ -1,1 +1,21 @@
-ADD Article
+<div ng-controller="ArticleCreateCtrl">	
+	<h3>Add Article</h3>
+	<form ng-submit="addArticle()">
+	  <div class="form-group">
+	    <label>Article Title</label>
+	    <input type="text" class="form-control" ng-model="title" name="title" placeholder="Enter Title">
+	  </div>
+	  <div class="form-group">
+	    <label>Category</label>
+	    <select class="form-control" ng-model="category" name="category">
+	    	<option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+	    </select>
+	  </div>
+	  <div class="form-group">
+	    <label>Body Text</label>
+	    <textarea class="form-control" ng-model="body" name="body" placeholder="Enter Article Body"></textarea>
+	  </div>	  
+	  <button type="submit" class="btn btn-default">Submit</button>
+	  <a class="btn btn-danger" href="#/categories" class="btn btn-default">Cancel</a>
+	</form>
+</div>
