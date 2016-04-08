@@ -1,8 +1,8 @@
 angular.module('SignupMod').controller('SignupCtrl',['$scope', '$http', function($scope, $http){
-  console.log('Signup Controller Init');
+  console.log('Signup Controller Init...');
 
-  $scope.runSignup = function() {
-  	console.log('Signing Up ' + $scope.name);
+  $scope.runSignup = function(){
+  	console.log('Signing Up');
 
   	//Submit to Sails Server
   	$http.post('/signup', {
@@ -14,7 +14,7 @@ angular.module('SignupMod').controller('SignupCtrl',['$scope', '$http', function
   		window.location = '/user';
   	})
   	.catch(function onError(err){
-  		console.log('Error: ' + err);
-  	});
+  		console.log('Error: ', err);
+  	})
   }
 }])
