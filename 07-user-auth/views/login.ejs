@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--STYLES-->
+  <link rel="stylesheet" href="/styles/angular-toastr.min.css">
+  <link rel="stylesheet" href="/styles/app.css">
+  <link rel="stylesheet" href="/styles/foundation.css">
+  <link rel="stylesheet" href="/styles/importer.css">
+  <!--STYLES END-->
+</head>
+<body ng-app="LoginMod" ng-controller="LoginCtrl">
+  <div class="large-3 large-centered columns">
+    <div class="login-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <h2 class="text-center">UserAuth</h2>
+          <p>Please log in or create an account</p>
+          <form ng-submit="runLogin()">
+            <div class="row">
+              <div class="large-12 columns">
+                <input type="email" ng-model="email" name="email" placeholder="Email address" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <input type="password" ng-model="password" name="password" placeholder="Password" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-5 columns">
+                <input type="submit" class="button expand" value="Log In">
+              </div>
+              <div class="large-7 columns">
+                <a href="/signup" class="button expand">Create Account</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--SCRIPTS-->
+  <script src="/js/dependencies/sails.io.js"></script>
+  <script src="/js/dependencies/jquery-1.12.2.min.js"></script>
+  <script src="/js/dependencies/angular.min.js"></script>
+  <script src="/js/dependencies/angular-toastr.min.js"></script>
+  <script src="/js/dependencies/angular-toastr.tpls.min.js"></script>
+  <script src="/js/dependencies/foundation.min.js"></script>
+  <script src="/js/public/signup/SignupMod.js"></script>
+  <script src="/js/public/signup/SignupCtrl.js"></script>
+  <script src="/js/public/login/LoginMod.js"></script>
+  <script src="/js/public/login/LoginCtrl.js"></script>
+  <!--SCRIPTS END-->
+</body>
+</html>

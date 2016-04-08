@@ -1,1 +1,1 @@
-angular.module('LoginMod', []);
+angular.module('LoginMod', ['toastr']);
