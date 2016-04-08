@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="/styles/importer.css">
 		<!--STYLES END-->
 	</head>
-	<body>
+	<body ng-app="DashMod" ng-controller="DashCtrl" ng-init="getUser()">
 		<div class="top-bar">
 		  <div class="top-bar-left">
 		    <ul class="dropdown menu" data-dropdown-menu>
@@ -23,6 +23,18 @@
 		</div>
 		<div class="row">
 			<h1>Dashboard</h1>
+			<div class="row">
+				<div class="large-2 columns">
+					<img ng-src="{{user.gravatarUrl}}" alt="avatar">
+				</div>
+				<div class="large-8 columns">
+					<ul>
+						<li>Name: {{user.name}}</li>
+						<li>Email: {{user.email}}</li>
+						<li>Member Since: {{user.createdAt}}</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	<!--SCRIPTS-->
 	<script src="/js/dependencies/sails.io.js"></script>
