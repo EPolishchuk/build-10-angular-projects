@@ -36,6 +36,8 @@ var jsFilesToInject = [
   'js/public/signup/SignupCtrl.js',
   'js/public/login/LoginMod.js',
   'js/public/login/LoginCtrl.js',
+  'js/private/dashboard/DashMod.js',
+  'js/private/dashboard/DashCtrl.js',
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'js/**/*.js'
