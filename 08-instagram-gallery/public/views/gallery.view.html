@@ -2,7 +2,7 @@
 	<div class="row"><h1>Take a closer look at your photos</h1></div>		
 	<div class="row gallery">
 		<div class="col-md-3" ng-repeat="img in images">
-			<a href="#"><img class="main" ng-src="{{img.images.low_resolution.url}}"></a>
+			<a ng-click="openLightboxModal($index)"><img class="main" ng-src="{{img.images.low_resolution.url}}"></a>
 			<div class="img-info">
 				<img class="avatar img-circle" ng-src="{{img.user.profile_picture}}"> Posted by: {{img.user.username}}
 			</div>
