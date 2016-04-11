@@ -1,4 +1,4 @@
-angular.module('galPhoto', ['ngRoute'])
+angular.module('galPhoto', ['ngRoute', 'ngResource'])
 
 .config(['$routeProvider', function($routeProvider){
 	$routeProvider
@@ -8,5 +8,5 @@ angular.module('galPhoto', ['ngRoute'])
 		})
 		.otherwise({
 			redirectTo: '/gallery'
-		});
+		})
 }])
